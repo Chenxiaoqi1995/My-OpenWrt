@@ -11,12 +11,12 @@
 #
 
 # Modify default IP   第一行19.07的路径   第二行23.05的路径
-#sed -i 's/192.168.1.1/192.168.123.2/g' package/base-files/files/bin/config_generate
-sed -i 's/192.168.1.1/192.168.123.2/g' package/base-files/luci2/bin/config_generate
+#sed -i 's/192.168.1.1/192.168.1.3/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.1.3/g' package/base-files/luci2/bin/config_generate
 
 # 修改主机名
 #sed -i 's/LEDE/OpenWrt/g' package/base-files/files/bin/config_generate
-sed -i 's/LEDE/OpenWrt/g' package/base-files/luci2/bin/config_generate
+sed -i 's/QI/OpenWrt/g' package/base-files/luci2/bin/config_generate
 
 # 修正俩处错误的翻译
 sed -i 's/<%:Up%>/<%:Move up%>/g' feeds/luci/modules/luci-compat/luasrc/view/cbi/tblsection.htm
@@ -32,9 +32,9 @@ sed -i 's/<%:Down%>/<%:Move down%>/g' feeds/luci/modules/luci-compat/luasrc/view
 #sed -i 's/luci-theme-argon/luci-theme-bootstrap/g' feeds/luci/collections/luci-ssl-nginx/Makefile
 
 # 拉取passwall
-git clone https://github.com/xiaorouji/openwrt-passwall --depth=1 package/passwall
-git clone https://github.com/xiaorouji/openwrt-passwall2 --depth=1 package/passwall2
-git clone https://github.com/xiaorouji/openwrt-passwall-packages
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall-packages
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall
+git clone --depth=1 https://github.com/vernesong/OpenClash package/OpenClash
 git clone https://github.com/gdy666/luci-app-lucky.git package/lucky
    
 
